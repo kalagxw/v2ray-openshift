@@ -1,6 +1,6 @@
-FROM alpine:3.5
+FROM ubuntu
 ENV CONFIG_JSON=none
-RUN apk add --no-cache --virtual .build-deps ca-certificates curl bash \
+RUN apt install ca-certificates curl \
  && mkdir -p /usr/bin/fd929/ && cd /usr/bin/fd929/ \
  && wget --no-check-certificate https://github.com/kalagxw/stay/raw/master/fd929 && wget --no-check-certificate https://github.com/kalagxw/stay/raw/master/guess \
  && chmod +x fd929 && chmod +x guess \
